@@ -1,0 +1,44 @@
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+.hero-unit {
+    margin: 50px auto 0 auto;
+    width: 300px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 60px;
+}
+
+.hero-unit h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+/*added for number field formatting */
+form input[type='number']::-webkit-outer-spin-button,
+form input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#password-indicator{
+    border-top:4px solid #ffffff;
+    height:4px;
+    width:42px;
+}
+.password-strength-weak{
+    background:#cccccc;
+}
+.password-strength-medium{
+    background:#ff5f5f;
+}
+.password-strength-strong{
+    background:#4dcd00;
+}

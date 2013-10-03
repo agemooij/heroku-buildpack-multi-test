@@ -1,0 +1,71 @@
+<form class="form-horizontal" name="form" id="form" ng-submit="register(form.$invalid)" novalidate="novalidate">
+    <div class="control-group">
+        <label class="control-label" for="fullname">Naam</label>
+
+        <div class="controls">
+            <input type="text" maxlength="256" name="fullname" id="fullname" placeholder="Naam" ng-model="person.fullName" required>
+            <span ng-show="showErrors && form.fullname.$error.required">Dit veld is verplicht</span>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="email">Email</label>
+
+        <div class="controls">
+            <input type="email" maxlength="256" name="email" id="email" placeholder="E-mail" ng-model="person.email" required>
+            <span ng-show="form.email.$error.email">Ongeldig email adres</span>
+            <span ng-show="showErrors && form.email.$error.required">Dit veld is verplicht</span>
+        </div>
+
+    </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="password">Wachtwoord</label>
+
+        <div class="controls">
+            <input type="password" name="password" id="password" placeholder="Wachtwoord"
+                   ng-model="person.password" required>
+            <span ng-show="showErrors && form.password.$error.required">Dit veld is verplicht</span>
+
+            <div password-strength-directive="person.password">{{ passwordStrength }}</div>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="password-repeat">Herhaal Wachtwoord</label>
+
+        <div class="controls">
+            <input type="password" name="password-repeat" id="password-repeat" placeholder="Herhaal wachtwoord"
+                   ng-model="person.passwordepeat" fields-are-equal-directive="person.password" target-model="passwordsMatch" required>
+            <span ng-show="showErrors && form.password-repeat.$error.required" >Dit veld is verplicht</span>
+            <span ng-hide="passwordsMatch" >Beide wachtwoorden moeten gelijk zijn</span>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="zipcode">Postcode</label>
+
+        <div class="controls">
+            <input type="text" id="zipcode" name="zipcode" pattern="^[1-9]{1}[0-9]{3} ?[A-Za-z]{2}$" ng-pattern="/^[1-9]{1}[0-9]{3} ?[A-Za-z]{2}$/" class="input-mini"
+                   maxlength="7" placeholder="9999 AA"
+                   ng-model="person.zipcode" required>
+            <span ng-show="showErrors && form.zipcode.$error.required">Dit veld is verplicht</span>
+            <span ng-show="showErrors && form.zipcode.$error.pattern">Voer een geldige postcode in</span>
+        </div>
+    </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="number">Huisnummer en toevoeging</label>
+
+        <div class="controls">
+            <input type="number" name="number" maxlength="7" class="input-mini" id="number" placeholder="00"
+                   ng-model="person.number"
+                   required> <input type="text" name="number-addon" class="input-mini" id="nummber-addon" maxlength="7"
+                                    placeholder="toev." ng-model="person.numberaddon">
+            <span ng-show="showErrors && form.number.$error.required">Vul een numeriek huisnummer in</span>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <button type="submit" class="btn">Registreer</button>
+        </div>
+    </div>
+</form>
