@@ -13,10 +13,11 @@ object ApiActor {
 
 class ApiActor extends HttpServiceActor
                   with ApiRoutes
+                  with StaticResourcesRoutes
                   with ActorExecutionContextSupport
                   with ActorLogging {
 
   def receive = runRoute(
-    apiRoutes
+    apiRoutes ~ staticResourcesRoutes
   )
 }
