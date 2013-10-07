@@ -1,2 +1,2 @@
-https://github.com/heroku/heroku-buildpack-scala      server
-https://github.com/sayar/heroku-buildpack-yeoman.git  static
+https://github.com/heroku/heroku-buildpack-scala     server
+https://github.com/agemooij/heroku-buildpack-yeoman  web
